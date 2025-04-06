@@ -3,122 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Freelancers - SkillHub</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Find Professionals - Nepali Consultancy</title>
     <style>
-        /* Additional specific styles for find page */
+        /* Base Styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #27ae60;
+            --text-color: #34495e;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: var(--text-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar a {
+            color: white !important;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search Section */
         .search-section {
-            background: #f8f9fa;
+            background: white;
             padding: 2rem;
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        .search-header {
+            text-align: center;
             margin-bottom: 2rem;
         }
 
+        .search-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Filter Elements */
         .filter-group {
+            display: flex;
+            gap: 1rem;
             margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        .freelancer-card {
-            background: white;
+        .search-input {
+            flex: 2;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 1rem;
         }
 
-        .profile-pic {
+        .filter-select {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+        }
+
+        /* Professional Cards */
+        .results-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .professional-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .avatar {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            object-fit: cover;
+            background: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin-right: 1.5rem;
+        }
+
+        .professional-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .details h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .consult-fee {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
         }
 
         .skill-tag {
-            background: #e9ecef;
-            padding: 0.3rem 0.8rem;
+            background: #ecf0f1;
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            margin: 0.3rem;
-            display: inline-block;
+            font-size: 0.9rem;
         }
 
-        .results-grid {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        .location {
+            color: #7f8c8d;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nepali-flag {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #dc143c 50%, #000080 50%);
+        }
+
+        /* Buttons */
+        .primary-button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .view-button {
+            background: var(--accent-color);
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .filter-group {
+                flex-direction: column;
+            }
+            
+            .search-input, .filter-select {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="find.html">Find Freelancers</a>
+    <nav class="navbar">
+        <a href="index.html">गृहपृष्ठ</a>
+        <a href="about.html">हाम्रो बारे</a>
+        <a href="find.html">व्यावसायिकहरू</a>
     </nav>
 
     <div class="container">
-        <h1>Find Skilled Freelancers</h1>
-        
         <div class="search-section">
-            <form id="searchForm">
-                <div class="filter-group">
-                    <input type="text" placeholder="Search skills (e.g., web design, python)" class="search-input">
-                </div>
-                <div class="filter-group">
-                    <select class="filter-select">
-                        <option value="">Hourly Rate</option>
-                        <option value="20">$20 and below</option>
-                        <option value="50">$20 - $50</option>
-                        <option value="100">$50 - $100</option>
-                    </select>
-                    
-                    <select class="filter-select">
-                        <option value="">Location</option>
-                        <option value="usa">USA</option>
-                        <option value="europe">Europe</option>
-                        <option value="asia">Asia</option>
-                    </select>
-                </div>
-                <button type="submit" class="primary-button">Search</button>
-            </form>
+            <div class="search-header">
+                <h1>निर्माण गर्नुहोस्, सल्लाह लिनुहोस्</h1>
+                <p>कुशल नेपाली पेशेवरहरू फेला पार्नुहोस्</p>
+            </div>
+            
+            <div class="filter-group">
+                <input type="text" placeholder="कौशल खोज्नुहोस् (जस्तै: वेब डिजाइन, लेखा)" class="search-input">
+                <select class="filter-select">
+                    <option value="">सल्लाह शुल्क</option>
+                    <option value="20">रु. 2000 सम्म</option>
+                    <option value="50">रु. 2000 - 5000</option>
+                    <option value="100">रु. 5000+</option>
+                </select>
+                <button class="primary-button">खोज्नुहोस्</button>
+            </div>
         </div>
 
         <div class="results-grid">
-            <!-- Freelancer Card 1 -->
-            <div class="freelancer-card">
-                <div class="flex-container">
-                    <img src="placeholder-profile.jpg" alt="John Doe" class="profile-pic">
-                    <div class="freelancer-info">
-                        <h3>John Doe</h3>
-                        <p>⭐ 4.9 (128 reviews)</p>
-                        <p>$45/hour</p>
+            <!-- Professional Card 1 -->
+            <div class="professional-card">
+                <div class="professional-info">
+                    <div class="avatar">PG</div>
+                    <div class="details">
+                        <h3>प्रकाश गुरुङ</h3>
+                        <p>⭐ ४.९ (१२८ समीक्षा)</p>
+                        <p class="consult-fee">सल्लाह: रु. ४५००</p>
                     </div>
                 </div>
                 <div class="skills">
-                    <span class="skill-tag">Web Design</span>
-                    <span class="skill-tag">UI/UX</span>
-                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">वेब विकास</span>
+                    <span class="skill-tag">पाइथन</span>
+                    <span class="skill-tag">डाटाबेस</span>
                 </div>
-                <p class="location">📍 New York, USA</p>
-                <button class="secondary-button">View Profile</button>
+                <div class="location">
+                    <div class="nepali-flag"></div>
+                    पोखरा, नेपाल
+                </div>
+                <button class="primary-button view-button">प्रोफाइल हेर्नुहोस्</button>
             </div>
 
-            <!-- Freelancer Card 2 -->
-            <div class="freelancer-card">
-                <div class="flex-container">
-                    <img src="placeholder-profile.jpg" alt="Jane Smith" class="profile-pic">
-                    <div class="freelancer-info">
-                        <h3>Jane Smith</h3>
-                        <p>⭐ 4.8 (234 reviews)</p>
-                        <p>$65/hour</p>
+            <!-- Professional Card 2 -->
+            <div class="professional-card">
+                <div class="professional-info">
+                    <div class="avatar">SS</div>
+                    <div class="details">
+                        <h3>सुनीता श्रेष्ठ</h3>
+                        <p>⭐ ४.८ (२३४ समीक्षा)</p>
+                        <p class="consult-fee">सल्लाह: रु. ६५००</p>
                     </div>
                 </div>
                 <div class="skills">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Django</span>
-                    <span class="skill-tag">API Development</span>
+                    <span class="skill-tag">लेखा</span>
+                    <span class="skill-tag">कर सल्लाह</span>
+                    <span class="skill-tag">वित्त</span>
                 </div>
-                <p class="location">📍 London, UK</p>
-                <button class="secondary-button">View Profile</button>
+                <div class="location">
+                    <div class="nepali-flag"></div>
+                    काठमाडौं, नेपाल
+                </div>
+                <button class="primary-button view-button">प्रोफाइल हेर्नुहोस्</button>
+            </div>
+
+            <!-- Professional Card 3 -->
+            <div class="professional-card">
+                <div class="professional-info">
+                    <div class="avatar">RT</div>
+                    <div class="details">
+                        <h3>रमेश थापा</h3>
+                        <p>⭐ ४.७ (९८ समीक्षा)</p>
+                        <p class="consult-fee">सल्लाह: रु. ३८००</p>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">डिजाइन</span>
+                    <span class="skill-tag">फोटोग्राफी</span>
+                    <span class="skill-tag">ग्राफिक्स</span>
+                </div>
+                <div class="location">
+                    <div class="nepali-flag"></div>
+                    ललितपुर, नेपाल
+                </div>
+                <button class="primary-button view-button">प्रोफाइल हेर्नुहोस्</button>
             </div>
         </div>
     </div>
