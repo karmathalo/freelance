@@ -163,13 +163,46 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .nepali-flag {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: linear-gradient(180deg, #dc143c 50%, #000080 50%);
-        }
+    position: relative;
+    width: 20px;
+    height: 24px; /* Nepal flag has unique proportions */
+    background: #DC143C; /* Crimson red */
+    clip-path: polygon(0 0, 100% 0, 70% 50%, 100% 100%, 0 100%, 30% 50%);
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.nepali-flag::before,
+.nepali-flag::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+/* Moon symbol */
+.nepali-flag::before {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 1px -1px 0 1px white;
+    top: 20%;
+    left: 30%;
+}
+
+/* Sun symbol */
+.nepali-flag::after {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px white, 
+                -4px -4px 0 -2px white,
+                4px -4px 0 -2px white;
+    bottom: 20%;
+    left: 30%;
+}
+
+        
 
         /* Buttons */
         .primary-button {
