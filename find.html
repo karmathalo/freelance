@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Freelancers - SkillHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional specific styles for find page */
+        .search-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .freelancer-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .skill-tag {
+            background: #e9ecef;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.3rem;
+            display: inline-block;
+        }
+
+        .results-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="find.html">Find Freelancers</a>
+    </nav>
+
+    <div class="container">
+        <h1>Find Skilled Freelancers</h1>
+        
+        <div class="search-section">
+            <form id="searchForm">
+                <div class="filter-group">
+                    <input type="text" placeholder="Search skills (e.g., web design, python)" class="search-input">
+                </div>
+                <div class="filter-group">
+                    <select class="filter-select">
+                        <option value="">Hourly Rate</option>
+                        <option value="20">$20 and below</option>
+                        <option value="50">$20 - $50</option>
+                        <option value="100">$50 - $100</option>
+                    </select>
+                    
+                    <select class="filter-select">
+                        <option value="">Location</option>
+                        <option value="usa">USA</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                    </select>
+                </div>
+                <button type="submit" class="primary-button">Search</button>
+            </form>
+        </div>
+
+        <div class="results-grid">
+            <!-- Freelancer Card 1 -->
+            <div class="freelancer-card">
+                <div class="flex-container">
+                    <img src="placeholder-profile.jpg" alt="John Doe" class="profile-pic">
+                    <div class="freelancer-info">
+                        <h3>John Doe</h3>
+                        <p>⭐ 4.9 (128 reviews)</p>
+                        <p>$45/hour</p>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">UI/UX</span>
+                    <span class="skill-tag">Figma</span>
+                </div>
+                <p class="location">📍 New York, USA</p>
+                <button class="secondary-button">View Profile</button>
+            </div>
+
+            <!-- Freelancer Card 2 -->
+            <div class="freelancer-card">
+                <div class="flex-container">
+                    <img src="placeholder-profile.jpg" alt="Jane Smith" class="profile-pic">
+                    <div class="freelancer-info">
+                        <h3>Jane Smith</h3>
+                        <p>⭐ 4.8 (234 reviews)</p>
+                        <p>$65/hour</p>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">API Development</span>
+                </div>
+                <p class="location">📍 London, UK</p>
+                <button class="secondary-button">View Profile</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
