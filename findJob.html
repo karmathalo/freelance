@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karmathalo - Find Freelance Jobs in Nepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #DC143C;
+            padding: 1rem;
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .search-bar {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            background-color: #DC143C;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Job Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Job Listings */
+        .job-listings {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .job-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .job-card:last-child {
+            border-bottom: none;
+        }
+
+        .job-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-info p {
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 1rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .apply-btn {
+            background-color: #DC143C;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">KARMATHALO</div>
+            <div class="nav-links">
+                <a href="#">Jobs</a>
+                <a href="#">Talents</a>
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for jobs...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="categories">
+            <div class="category-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-pen"></i>
+                <h3>Writing</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Marketing</h3>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-palette"></i>
+                <h3>Design</h3>
+            </div>
+        </section>
+
+        <section class="job-listings">
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Website Development for E-commerce</h3>
+                    <p>Looking for experienced PHP developer to build online store</p>
+                    <div class="job-meta">
+                        <span>Budget: Rs 50,000</span>
+                        <span>Proposals: 15</span>
+                        <span>2 days ago</span>
+                    </div>
+                </div>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+
+            <div class="job-card">
+                <div class="job-info">
+                    <h3>Content Writer Needed for Blog</h3>
+                    <p>Regular blog posts about technology trends</p>
+                    <div class="job-meta">
+                        <span>Budget: Rs 1,000/article</span>
+                        <span>Proposals: 8</span>
+                        <span>5 hours ago</span>
+                    </div>
+                </div>
+                <button class="apply-btn">Apply Now</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Karmathalo</h4>
+                <p>Connecting Nepali talents with opportunities</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
