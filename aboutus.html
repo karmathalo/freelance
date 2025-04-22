@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Karmathalo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            color: #FF6B00;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            color: #FF6B00;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .platform-description {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .highlight {
+            color: #FF6B00;
+            font-weight: 600;
+        }
+
+        /* Value Propositions */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .value-card h3 {
+            color: #2c3e50;
+            margin: 1rem 0;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FF6B00;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #E55B00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">Karmathalo</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Revolutionizing Nepal's Gig Economy</h1>
+            <p>Connecting Talent with Opportunity</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="section">
+            <div class="platform-description">
+                <h2 class="section-title">About Karmathalo</h2>
+                <p class="lead-text">
+                    <span class="highlight">Karmathalo</span> is a pioneering digital platform revolutionizing Nepal's gig economy by seamlessly connecting skilled freelancers with businesses seeking on-demand talent.
+                </p>
+                <p>
+                    Designed exclusively for the Nepali market, we empower freelancers - from graphic designers and IT professionals to content creators - to showcase their expertise, secure fair opportunities, and receive timely payments. Simultaneously, businesses gain cost-effective access to a curated pool of local talent for short-term projects or specialized tasks.
+                </p>
+            </div>
+
+            <h2 class="section-title">How It Works</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>For Freelancers</h3>
+                    <p>Create your profile, showcase your skills, and find quality projects that match your expertise.</p>
+                    <a href="#" class="cta-button">Join as Freelancer</a>
+                </div>
+
+                <div class="value-card">
+                    <h3>For Businesses</h3>
+                    <p>Find verified professionals, manage projects efficiently, and get work done on time.</p>
+                    <a href="#" class="cta-button">Hire Talent</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Why Choose Karmathalo?</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>Local Focus</h3>
+                    <p>Tailored specifically for Nepal's market needs and payment systems</p>
+                </div>
+                <div class="value-card">
+                    <h3>Secure Payments</h3>
+                    <p>Protected transactions with milestone-based payment system</p>
+                </div>
+                <div class="value-card">
+                    <h3>Quality Assurance</h3>
+                    <p>Verified professionals and client reviews system</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
